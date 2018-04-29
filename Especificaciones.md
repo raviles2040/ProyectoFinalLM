@@ -1,4 +1,4 @@
-#Objectiu final: Realitzar una aplicació web de notícies que, en fer scroll fins abaix, recarregui més notícies amb html, , JSON, jQuery i Bootstrap.
+# Objectiu final: Realitzar una aplicació web de notícies que, en fer scroll fins abaix, recarregui més notícies amb html, , JSON, jQuery i Bootstrap.
 
 
 Abans de començar:
