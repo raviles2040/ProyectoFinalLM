@@ -1,6 +1,6 @@
 $(function(){
 
-$.getJSON( "../NEWS/news1.json", function( jsonObject ) {
+$.getJSON( "../DATA/1.json", function( jsonObject ) {
     //en aquest punt l'objecte jsonObject correspon al fitxer
     pintar( jsonObject );
   });
