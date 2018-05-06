@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function() {
 
     $.getJSON("../DATA/1.json", function (jsonObject) {
         console.log("ha entrado en el getJSON")
