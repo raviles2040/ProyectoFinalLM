@@ -1,4 +1,4 @@
-$(window).load(function() {
+$(document).ready(function(){
 
 $.getJSON( "../NEWS/news1.json", function( jsonObject ) {
     //en aquest punt l'objecte jsonObject correspon al fitxer
