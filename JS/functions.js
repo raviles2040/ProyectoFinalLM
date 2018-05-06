@@ -1,7 +1,6 @@
 $(document).ready(function() {
-
+    console.log("ha entrado en el documento JS")
     $.getJSON("../DATA/1.json", function (jsonObject) {
-        console.log("ha entrado en el getJSON")
         //en aquest punt l'objecte jsonObject correspon al fitxer
         console.log(jsonObject)
         pintar(jsonObject);
