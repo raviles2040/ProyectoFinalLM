@@ -6,10 +6,11 @@ $(function () {
     });
 
     function pintar(json) {
+        console.log("JSON --> " ,json)
         $.each(json, function (i, news) {
-            $("#news1").append("<div'" + i + "'>" + "<h1>" + news.title + "</h1>" + "<br>" + "<img src=" + news.img + ">" + "<p>" + news.description + "</p>" + "</div>");
+            $("#news").append("<div'" + i + "'>" + "<h1>" + news.title + "</h1>" + "<br>" + "<img src=" + news.img + ">" + "<p>" + news.description + "</p>" + "</div>");
         });
-
+        console.log("GET JSON --> ", $.getJSON("../DATA/2.json"))
         if(json != $.getJSON("../DATA/2.json")) {
             $.getJSON("../DATA/2.json", function (jsonObject) {
                 //en aquest punt l'objecte jsonObject correspon al fitxer
