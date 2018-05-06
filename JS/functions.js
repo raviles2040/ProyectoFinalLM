@@ -7,7 +7,7 @@ $.getJSON( "../NEWS/news1.json", function( jsonObject ) {
   
   function pintar(json){
    $.each( json, function( i, news ) {
-    $("#news").append( "<li id='" + i + "'>" + news.title + " " + news.description + "</li>" );
+    $("#news").append( "<div'" + i + "'>" + "<h1>" + news.title + "</h1>" + "<br>" + "<p>" + news.description + "</p>"+ "</div>" );
    });
   }
 
