@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
 
 $.getJSON( "../NEWS/news1.json", function( jsonObject ) {
     //en aquest punt l'objecte jsonObject correspon al fitxer
@@ -11,4 +11,4 @@ $.getJSON( "../NEWS/news1.json", function( jsonObject ) {
    });
   }
 
-});
+})
