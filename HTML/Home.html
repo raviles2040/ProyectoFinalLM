@@ -12,6 +12,7 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -27,51 +28,67 @@
 </head>
 
 <body>
-    <header>
-        <h1>ESPACIO SALVAJE</h1>
-        <p>Descripción de la web sobre la imagen</p>
-        <div>
-            <div>Reloj</div>
-            <p>Fecha(día y hora)</p>
-        </div>
-        <button>Subscribete</button>
-        <button>Inicia Sesión</button>
-        <!-- Barra de navegación  -->
-        <div>
-            <ul>
-                <li>
-                    <a href="Home.html">Inicio</a>
-                </li>
-                <li>
-                    <a href="curiosidades.html">Curiosidades</a>
-                </li>
-                <li>
-                    <a href="contacto.html">Contacto</a>
-                </li>
-            </ul>
-        </div>
-    </header>
-
+    <!-- Barra de navegación  -->
     <div>
-        <h1>La única loba salvaje de Dinamarca en los últimos 200 años muere de un disparo</h1>
-        <img src="../CSS/IMG/Loba.jpg">
-        <p>
-            En 2012 un grupo de lobos salvajes fue enviado a Dinamarca después de la desaparición de la especie hace dos siglos. Desde
-            entonces, han llegado al país varios ejemplares. Entre ellos, una hembra, en 2017. Pero este lunes la única loba
-            salvaje que había en el país ha muerto tras recibir un tiro, según informa The Guardian. Dos fotógrafos que observaban
-            a los ejemplares en el municipio de Ulfborg grabaron el momento en el que dispararon al animal. En el vídeo,
-            se ve como un tiro alcanza a la hembra, que cae desplomada. La loba, que había viajado más de 450 kilómetros
-            desde Alemania a Dinamarca, formaba parte de una manada en la región. El país había estado dos siglos sin ningún
-            lobo salvaje hasta 2012, pues al último ejemplar en Dinamarca lo mataron en 1813. Ahora, la muerte de la loba
-            supone una amenaza para la supervivencia de la especie. El cazador disparó al animal desde su vehículo y, tras
-            matarlo, se dio a la fuga. Gracias al vídeo, la policía danesa ha podido identificar y detener al dueño del vehículo,
-            que está acusado de violar la ley de caza de Dinamarca. El acusado, de 66 años, niega los hechos.
-        </p>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="#">
+                <img src="../CSS/IMG/mirada1.jpg" alt="logo" style="width:60px;">
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 3</a>
+                </li>
+                <div class="row">
+                    <button type="button" class="btn btn-link">Subscribete</button>
+
+                    <button type="button" class="btn btn-link">Inicia Sesión</button>
+                </div>
+            </ul>
+        </nav>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-1">ESPACIO SALVAJE</h1>
+            <h1 class="display-4">Descripción de la web sobre la imagen</h1>
+            <div>
+                <div>Reloj</div>
+                <p>Fecha(día y hora)</p>
+            </div>
+
+        </div>
+    </div>
     </div>
 
-    <div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6" style="background-color:lavenderblush;" />
+            <h1>La única loba salvaje de Dinamarca en los últimos 200 años muere de un disparo</h1>
+            <img src="../CSS/IMG/Loba.jpg" div class="col-sm-10" style="background-color:lavenderblush;">
+            <p>
+                En 2012 un grupo de lobos salvajes fue enviado a Dinamarca después de la desaparición de la especie hace dos siglos. Desde
+                entonces, han llegado al país varios ejemplares. Entre ellos, una hembra, en 2017. Pero este lunes la única
+                loba salvaje que había en el país ha muerto tras recibir un tiro, según informa The Guardian. Dos fotógrafos
+                que observaban a los ejemplares en el municipio de Ulfborg grabaron el momento en el que dispararon al animal.
+                En el vídeo, se ve como un tiro alcanza a la hembra, que cae desplomada. La loba, que había viajado más de
+                450 kilómetros desde Alemania a Dinamarca, formaba parte de una manada en la región. El país había estado
+                dos siglos sin ningún lobo salvaje hasta 2012, pues al último ejemplar en Dinamarca lo mataron en 1813. Ahora,
+                la muerte de la loba supone una amenaza para la supervivencia de la especie. El cazador disparó al animal
+                desde su vehículo y, tras matarlo, se dio a la fuga. Gracias al vídeo, la policía danesa ha podido identificar
+                y detener al dueño del vehículo, que está acusado de violar la ley de caza de Dinamarca. El acusado, de 66
+                años, niega los hechos.
+            </p>
+        </div>
+
+        <div class="col-sm-6" style="background-color:lavenderblush;" />
         <h1>Las historias de horror de los parásitos que controlan la mente de sus víctimas</h1>
-        <img src="../CSS/IMG/hormiga.jpg">
+        <img src="../CSS/IMG/hormiga.jpg" div class="col-sm-10" style="background-color:lavenderblush;">
         <p>
             Uno de los usos que los parásitos hacen de sus víctimas es el de emplearlos como medio para reproducirse y dispersarse. Es
             el caso del Dicrocoelium dendriticum, que comienza su ciclo en el hígado de animales como las ovejas. Allí ponen
@@ -86,9 +103,9 @@
         </p>
     </div>
 
-    <div>
+    <div div class="col-sm-12" style="background-color:lavenderblush;">
         <h1>Los pájaros son mucho más listos de lo que pensamos</h1>
-        <img src="../CSS/IMG/cuervo.jpg">
+        <img src="../CSS/IMG/cuervo.jpg" div class="col-sm-12" style="background-color:lavenderblush;">
         <p>
             Por lo general, los cuervos y las cornejas son los campeones de la utilización y la fabricación de herramientas con algún
             grado de complejidad. Un ejemplo, a modo de abreboca. Estamos en Japón. Un cuervo grande (Corvus corax) sobrevuela
@@ -101,6 +118,8 @@
             Unidos y, como hemos visto, Japón. Fetnat, la pequeña hembra capuchina, usaba mi pie para cascar nueces; por
             lo visto, los cuervos son más listos.
         </p>
+    </div>
+    </div>
     </div>
 
     <div id="news"></div>
