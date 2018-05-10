@@ -7,8 +7,8 @@
     <meta charset="utf-8">
     <meta name="description" content="Proyecto de lenguaje de marcas (Noticias) uso de HTML/BOOTSTRAP/JSON/JavaScript">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' media='screen and (min-width: 961px)' href='css/'>
-    <link rel='stylesheet' media='screen and (max-width: 960px)' href='css/'>
+    <link rel='stylesheet' href='../CSS/style.css'>
+    <!-- <link rel='stylesheet' media='screen and (max-width: 960px)' href='css/'> -->
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -23,47 +23,71 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
-
 </head>
 
 <body>
-    <!-- Barra de navegación  -->
-    <div>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <!-- Brand/logo -->
-            <a class="navbar-brand" href="#">
-                <img src="../CSS/IMG/mirada1.jpg" alt="logo" style="width:60px;">
-            </a>
-            <ul class="navbar-nav">
+    <div class="jumbotron jumbotron-fluid" style="padding:0px;">
+        <!-- Barra de navegación  -->
+            <ul class="nav nav-pills">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link 1</a>
+                    <a class="nav-link active" href="#">Active</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link 2</a>
+                    <a class="nav-link" href="#">Link</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link 3</a>
+                    <a class="nav-link" href="#">Link</a>
                 </li>
-                <div class="row">
-                    <button type="button" class="btn btn-link">Subscribete</button>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                <button type="button" class="btn btn-link">Subscribete</button>
 
-                    <button type="button" class="btn btn-link">Inicia Sesión</button>
-                </div>
+                <button type="button" class="btn btn-link">Inicia Sesión</button>
             </ul>
         </nav>
-    </div>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-1">ESPACIO SALVAJE</h1>
-            <h1 class="display-4">Descripción de la web sobre la imagen</h1>
-            <div>
-                <div>Reloj</div>
-                <p>Fecha(día y hora)</p>
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./../CSS/IMG/background (1).jpg" class="img-responsive" alt="">
+                    <div class="carousel-caption">
+                        <h1 class="display-1">ESPACIO SALVAJE</h1>
+                        <h1 class="display-4">Descripción de la web sobre la imagen</h1>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./../CSS/IMG/animales (1).jpg" class="img-responsive" alt="">
+                    <div class="carousel-caption">
+                        <h1 class="display-1">ESPACIO SALVAJE</h1>
+                        <h1 class="display-4">Descripción de la web sobre la imagen</h1>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./../CSS/IMG/animales (2).jpg" class="img-responsive" alt="">
+                    <div class="carousel-caption">
+                        <h1 class="display-1">ESPACIO SALVAJE</h1>
+                        <h1 class="display-4">Descripción de la web sobre la imagen</h1>
+                    </div>
+                </div>
             </div>
 
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
         </div>
-    </div>
     </div>
 
     <div class="container">
@@ -124,4 +148,5 @@
 
     <div id="news"></div>
     <div id="news1"></div>
+    <button type="button" class="btn btn-primary">Leer más</button>
 </body>
