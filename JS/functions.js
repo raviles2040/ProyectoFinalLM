@@ -1,6 +1,7 @@
+let contador = 0;
+
 $(document).ready(function () {
     $("button").click(function () {
-        var contador = 0;
         $.getJSON("../DATA/1.json", function (jsonObject) {
             console.log(jsonObject)
             volcarJson(jsonObject);
@@ -21,17 +22,12 @@ $(document).ready(function () {
         }
 
         function imprimirTresPrimerasNoticias(json) {
-            if (contador == 0) {
                 console.log("JSON --> ", json)
                 $.each(json, function (i, news) {
                     $("#news").append("<div'" + i + "'>" + "<h1>" + news.title + "</h1>" + "<br>" + "<img src=" + news.img + ">" + "<p>" + news.description + "</p>" + "</div>");
                 });
-                contador++;
+                contador ++;
             }
-            else {
-
-            }
-        }
 
         function imprimirTresUltimasNoticias(json) {
             $.getJSON("../DATA/2.json", function (jsonObject) {
@@ -44,7 +40,7 @@ $(document).ready(function () {
                 $.each(json, function (i, news) {
                     $("#news1").append("<div'" + i + "'>" + "<h1>" + news.title + "</h1>" + "<br>" + "<img src=" + news.img + ">" + "<p>" + news.description + "</p>" + "</div>");
                 });
-                contador++;
+                contador ++;
             }
         }
     });
