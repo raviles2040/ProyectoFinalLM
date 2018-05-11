@@ -30,13 +30,13 @@
         <!-- Barra de navegación  -->
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link active" href="#">Inicio</a>
+                <a class="nav-link active" href="Home.html">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Curiosidades</a>
+                <a class="nav-link" href="curiosidades.html">Curiosidades</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
+                <a class="nav-link" href="contacto.html">Contacto</a>
             </li>
 
             <button type="button" id="boton" class="btn btn-link">Subscribete</button>
@@ -91,7 +91,7 @@
     <div class="container" id="news">
         <div class="col-sm-20" style="background-color:lavenderblush;">
             <h1>La única loba salvaje de Dinamarca en los últimos 200 años muere de un disparo</h1>
-            <img src="../CSS/IMG/Loba.jpg" class="col-sm-12" style="background-color:lavenderblush;">
+            <img src="../CSS/IMG/Loba.jpg" class="col-sm-12" style="background-color:lavenderblush;" id="news1">
             <p>
                 En 2012 un grupo de lobos salvajes fue enviado a Dinamarca después de la desaparición de la especie hace dos siglos. Desde
                 entonces, han llegado al país varios ejemplares. Entre ellos, una hembra, en 2017. Pero este lunes la única
@@ -105,9 +105,42 @@
                 y detener al dueño del vehículo, que está acusado de violar la ley de caza de Dinamarca. El acusado, de 66
                 años, niega los hechos.
             </p>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Leer más</button>
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h1 class="modal-title">La única loba salvaje de Dinamarca en los últimos 200 años muere de un disparo</h1>
+                    </div>
+                    <div class="modal-body">
+                        <<img src="../CSS/IMG/Loba.jpg" class="col-sm-12" style="background-color:lavenderblush;" id="news1">
+                            <p>
+                                En 2012 un grupo de lobos salvajes fue enviado a Dinamarca después de la desaparición de la especie hace dos siglos. Desde
+                                entonces, han llegado al país varios ejemplares. Entre ellos, una hembra, en 2017. Pero este
+                                lunes la única loba salvaje que había en el país ha muerto tras recibir un tiro, según informa
+                                The Guardian. Dos fotógrafos que observaban a los ejemplares en el municipio de Ulfborg grabaron
+                                el momento en el que dispararon al animal. En el vídeo, se ve como un tiro alcanza a la hembra,
+                                que cae desplomada. La loba, que había viajado más de 450 kilómetros desde Alemania a Dinamarca,
+                                formaba parte de una manada en la región. El país había estado dos siglos sin ningún lobo
+                                salvaje hasta 2012, pues al último ejemplar en Dinamarca lo mataron en 1813. Ahora, la muerte
+                                de la loba supone una amenaza para la supervivencia de la especie. El cazador disparó al
+                                animal desde su vehículo y, tras matarlo, se dio a la fuga. Gracias al vídeo, la policía
+                                danesa ha podido identificar y detener al dueño del vehículo, que está acusado de violar
+                                la ley de caza de Dinamarca. El acusado, de 66 años, niega los hechos.
+                            </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="col-sm-20" style="background-color:lavenderblush;">
+        <div class="col-sm-20" style="background-color:lavenderblush;" id="news2">
             <h1>Las historias de horror de los parásitos que controlan la mente de sus víctimas</h1>
             <img src="../CSS/IMG/hormiga.jpg" class="col-sm-12" style="background-color:lavenderblush;">
             <p>
@@ -122,6 +155,38 @@
                 alto de una brizna de hierba. “Una vez allí, se sujeta mordiendo con fuerza y espera a que algún animal la
                 devore”, explican los autores del trabajo, liderado por Frederic Libersat
             </p>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">Leer más</button>
+        </div>
+        <div class="modal fade" id="myModal1" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h1 class="modal-title">Las historias de horror de los parásitos que controlan la mente de sus víctimas</h1>
+                    </div>
+                    <div class="modal-body">
+                        <img src="../CSS/IMG/hormiga.jpg" class="col-sm-12" style="background-color:lavenderblush;">
+                        <p>
+                            Uno de los usos que los parásitos hacen de sus víctimas es el de emplearlos como medio para reproducirse y dispersarse. Es
+                            el caso del Dicrocoelium dendriticum, que comienza su ciclo en el hígado de animales como las
+                            ovejas. Allí ponen huevos que después son expulsados a través de las heces y pasan a infectar
+                            a caracoles que se alimentan de ellas. A continuación, los caracoles producen unas mucosidades
+                            que atraen a las hormigas y acaban infectadas por los parásitos. Mientras la mayoría de los parásitos
+                            se queda en el hemolinfo, la sangre de las hormigas, uno solo de los parásitos migra hasta la
+                            cabeza del insecto y, se cree, comienza a segregar algún tipo de sustancia química que sirve
+                            para controlar su comportamiento. Una vez infectada, la hormiga sigue comportándose como una
+                            más de su colonia, pero cuando cae la tarde y el aire se enfría, abandona al grupo y se sube
+                            a lo alto de una brizna de hierba. “Una vez allí, se sujeta mordiendo con fuerza y espera a que
+                            algún animal la devore”, explican los autores del trabajo, liderado por Frederic Libersat
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div div class="col-sm-20" style="background-color:lavenderblush;">
@@ -139,7 +204,39 @@
                 Unidos y, como hemos visto, Japón. Fetnat, la pequeña hembra capuchina, usaba mi pie para cascar nueces;
                 por lo visto, los cuervos son más listos.
             </p>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Leer más</button>
+        </div>
+        <div class="modal fade" id="myModal2" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h1 class="modal-title">Los pájaros son mucho más listos de lo que pensamos</h1>
+                    </div>
+                    <div class="modal-body">
+                        <img src="../CSS/IMG/cuervo.jpg" class="col-sm-12" style="background-color:lavenderblush;">
+                        <p>
+                            Por lo general, los cuervos y las cornejas son los campeones de la utilización y la fabricación de herramientas con algún
+                            grado de complejidad. Un ejemplo, a modo de abreboca. Estamos en Japón. Un cuervo grande (Corvus
+                            corax) sobrevuela una calle. Lleva una nuez en el pico. Se posa en un cable del tendido, cerca
+                            de un semáforo y encima de un paso peatonal. Cuando el tráfico es más denso deja caer la nuez
+                            sobre la calzada, y los autos que van y vienen acaban rompiendo la nuez. Este pájaro se vale
+                            nada menos que de la circulación automotora como de una herramienta... Pero es capaz de sorprendernos
+                            aún más. En efecto, el cuervo aguarda pacientemente que la luz del hombrecillo verde en el semáforo
+                            se encienda y la de los coches pase a rojo, y solo entonces vuela hasta el paso peatonal y recoge
+                            la nuez, ahora libre de su cárcel. Este tipo de anécdotas con cuervos es frecuente en Francia,
+                            Estados Unidos y, como hemos visto, Japón. Fetnat, la pequeña hembra capuchina, usaba mi pie
+                            para cascar nueces; por lo visto, los cuervos son más listos.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <button type="button" class="btn btn-primary">Leer más</button>
+    <button type="button" class="btn btn-primary" id="leerMas">Leer más</button>
 </body>
