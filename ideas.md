@@ -1,0 +1,1 @@
+#añadir un modal de registrarse, y que esto lo almacene en un array,  y cuando se logue con su usuario le devuelva un modal de bienvenida y en la barra de navegación aparezca su nombre.

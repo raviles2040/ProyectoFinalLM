@@ -44,5 +44,11 @@ $(document).ready(function () {
                 contador++;
             }
         }
+
+        function relojDigital() {
+            var reloj = new Date();
+            reloj.toDateString();
+            $("FechayHora").append(reloj)
+        }
     });
 });
