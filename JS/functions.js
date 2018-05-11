@@ -1,7 +1,7 @@
 let contador = 0;
 
 $(document).ready(function () {
-    $("leerMas").click(function () {
+    $("#leerMas").click(function () {
         $.getJSON("../DATA/1.json", function (jsonObject) {
             console.log(jsonObject)
             volcarJson(jsonObject);
