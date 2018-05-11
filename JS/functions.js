@@ -16,7 +16,7 @@ $(document).ready(function () {
                     imprimirTresUltimasNoticias(json)
                     break;
                 default:
-                    $("alert").append("<div class=\"alert alert-danger\"><strong>¡Atención!</strong> You should <a href=\"#\" class=\"alert-link\">no hay más noticias que cargar</a>.</div>")
+                    $("#news").append("<div class=\"alert alert-danger\"><strong>¡Atención!</strong> You should <a href=\"#\" class=\"alert-link\">no hay más noticias que cargar</a>.</div>")
                     break;
             }
         }
