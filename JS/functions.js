@@ -22,12 +22,17 @@ $(document).ready(function () {
         }
 
         function imprimirTresPrimerasNoticias(json) {
-                console.log("JSON --> ", json)
-                $.each(json, function (i, news) {
-                    $("#news").append("<div'" + i + "'>" + "<h1>" + news.title + "</h1>" + "<br>" + "<img src=" + news.img + ">" + "<p>" + news.description + "</p>" + "</div>");
-                });
-                contador ++;
-            }
+            console.log("JSON --> ", json)
+            $.each(json, function (i, news) {
+                if (news.type === 1) {
+                    $("#news1").append("<div class=\"col-sm-6\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title + "</h1>" + "<br>" + "<img src=" + news.img + " div class=\"col-sm-10\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" + "</div>");
+                }
+                if (news.type === 3) {
+                    $("#news1").append("<div class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title + "</h1>" + "<br>" + "<img src=" + news.img + " div class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" + "</div>");
+                }
+            });
+            contador++;
+        }
 
         function imprimirTresUltimasNoticias(json) {
             $.getJSON("../DATA/2.json", function (jsonObject) {
@@ -38,9 +43,14 @@ $(document).ready(function () {
 
             function pintar1(json) {
                 $.each(json, function (i, news) {
-                    $("#news1").append("<div'" + i + "'>" + "<h1>" + news.title + "</h1>" + "<br>" + "<img src=" + news.img + ">" + "<p>" + news.description + "</p>" + "</div>");
+                    if (news.type === 1) {
+                        $("#news1").append("<div class=\"col-sm-6\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title + "</h1>" + "<br>" + "<img src=" + news.img + " div class=\"col-sm-10\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" + "</div>");
+                    }
+                    if (news.type === 3) {
+                        $("#news1").append("<div class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title + "</h1>" + "<br>" + "<img src=" + news.img + " div class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" + "</div>");
+                    }
                 });
-                contador ++;
+                contador++;
             }
         }
     });
