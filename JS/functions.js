@@ -16,7 +16,7 @@ $(document).ready(function () {
                     imprimirTresUltimasNoticias(json)
                     break;
                 default:
-                    return alert("No hay más noticias que cargar")
+                    $("alert").append("<div class=\"alert alert-danger\"><strong>¡Atención!</strong> You should <a href=\"#\" class=\"alert-link\">no hay más noticias que cargar</a>.</div>")
                     break;
             }
         }
@@ -44,28 +44,6 @@ $(document).ready(function () {
                 contador++;
             }
         }
-
-        var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-
-        var newDate = new Date();
-        newDate.setDate(newDate.getDate());
-        $('#Date').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
-
-        setInterval(function () {
-            var seconds = new Date().getSeconds();
-            $("#sec").html((seconds < 10 ? "0" : "") + seconds);
-        }, 1000);
-
-        setInterval(function () {
-            var minutes = new Date().getMinutes();
-            $("#min").html((minutes < 10 ? "0" : "") + minutes);
-        }, 1000);
-
-        setInterval(function () {
-            var hours = new Date().getHours();
-            $("#hours").html((hours < 10 ? "0" : "") + hours);
-        }, 1000);
     });
 });
 
