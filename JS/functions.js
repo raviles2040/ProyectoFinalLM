@@ -73,7 +73,7 @@ $(document).ready(function () {
     $("#noticiaCompleta3").click(function () {
         window.location.href = "../NEWS/news3.html"
     });
-    $("nuevaNoticia").click(function () {
+    $("#nuevaNoticia").click(function () {
         indiceNoticia = $("nuevaNoticia").data("indice")
         rellenarTemplate(indiceNoticia);
     });
