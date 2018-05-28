@@ -51,12 +51,11 @@ $(document).ready(function () {
                         "<button type= button class=btn btn-info btn-lg data-toggle= modal data-target=" + news.modal + ">Leer más</button>" +
                         "</div>");
                 });
+                $("#leerMas").css("display", "none")
                 contador++;
             }
-            $("#leerMas").css("display", "none")
-            contador++;
         }
-    }
     });
 });
+
 
