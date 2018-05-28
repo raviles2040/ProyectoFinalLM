@@ -54,9 +54,9 @@ $(document).ready(function () {
             }
         }
         function noHayMasNoticias() {
-            $("#leerMas").css("visibility","hidden")
+            $("#leerMas").css("display","none")
             $("#noHayMasNoticiasQueCargar").css("visibility","visible")
-            $("modal-body").append("<div class=\"alert alert-danger\"><strong>¡Atención!<a href=\"#\" class=\"alert-link\">no hay más noticias que cargar</a>.</div>")
+            $("#modalBody").append("<h4>NO hay más noticias que cargar </h4>")
         }
     });
 });
