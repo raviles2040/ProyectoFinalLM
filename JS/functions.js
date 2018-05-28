@@ -15,8 +15,7 @@ $(document).ready(function () {
                 case 1:
                     imprimirTresUltimasNoticias(json)
                     break;
-                case 2:
-                    noHayMasNoticias();
+                default:
                     break;
             }
         }
@@ -24,7 +23,7 @@ $(document).ready(function () {
         function imprimirTresPrimerasNoticias(json) {
             console.log("JSON --> ", json)
             $.each(json, function (i, news) {
-                if(i < 2) {
+                if (i < 2) {
                     $("#news").append("<div class=\"col-sm-6\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title + "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" + "</div>");
                 }
                 else {
@@ -43,20 +42,16 @@ $(document).ready(function () {
 
             function pintar1(json) {
                 $.each(json, function (i, news) {
-                    if(i < 2) {
+                    if (i < 2) {
                         $("#news").append("<div class=\"col-sm-6\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title + "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" + "</div>");
                     }
                     else {
                         $("#news").append("<div class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title + "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" + "</div>");
                     }
                 });
+                $("#leerMas").css("display", "none")
                 contador++;
             }
-        }
-        function noHayMasNoticias() {
-            $("#leerMas").css("display","none")
-            $("#noHayMasNoticiasQueCargar").css("visibility","visible")
-            $("#modalBody").append("<h4>NO hay más noticias que cargar </h4>")
         }
     });
 });
