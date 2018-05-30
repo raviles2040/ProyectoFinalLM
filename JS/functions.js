@@ -1,4 +1,10 @@
 let contador = 0;
+$("#noticiaCargada").ready(function() {
+    $("button.nuevaNoticia").click(function () {
+        let indiceNoticia = $("nuevaNoticia").data("indice")
+        alert("has pulsado el boton" + indiceNoticia)
+    });
+})
 $(document).ready(function () {
     $("#leerMas").click(function () {
         pintarJson();
@@ -26,6 +32,7 @@ $(document).ready(function () {
                 break;
         }
     }
+
     function imprimirTresPrimerasNoticias() {
         $.getJSON("../DATA/1.json", function (jsonObject) {
             $.each(jsonObject, function (i, news) {
@@ -58,7 +65,7 @@ $(document).ready(function () {
                 else {
                     $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
                         "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
-                        "<button type=button class=\"btn btn-info btn-lg \" id=\"tester\" data-indice=" + news.indice + ">Leer más</button>" +
+                        "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" id=\"tester\" data-indice=" + news.indice + ">Leer más</button>" +
                         "</div>");
                 }
             });
@@ -79,11 +86,6 @@ $(document).ready(function () {
         });
         window.location.href = "../NEWS/newNews.html"
     }
-
-    $("#tester").click(function () {
-        let indiceNoticia = $("#nuevaNoticia").data("indice")
-        alert("has pulsado el boton" + indiceNoticia)
-    });
 
     $(window).on("scroll", function () {
         var scrollHeight = $(document).height();
