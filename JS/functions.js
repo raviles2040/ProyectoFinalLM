@@ -80,12 +80,10 @@ $(document).ready(function () {
         window.location.href = "../NEWS/newNews.html"
     }
 
-    $("#noticiaCargada").ready(function () {
-        $("#tester").click(function () {
-            let indiceNoticia = $("#nuevaNoticia").data("indice")
-            alert("has pulsado el boton" + indiceNoticia)
-        });
-    })
+    $("#tester").click(function () {
+        let indiceNoticia = $("#nuevaNoticia").data("indice")
+        alert("has pulsado el boton" + indiceNoticia)
+    });
 
     $(window).on("scroll", function () {
         var scrollHeight = $(document).height();
