@@ -55,6 +55,19 @@ function imprimirTresUltimasNoticias() {
 function ocultarBoton() {
     $("#leerMas").css("display", "none");
 }
+$("#tester").click(function () {
+    let indiceNoticia = $("#nuevaNoticia").data("indice")
+    alert("has pulsado el boton" + indiceNoticia)
+});
+function pintarNoticia(jsonObject, indice) {
+    $.each(json, function (i, news) {
+        if (news.indice == indice) {
+            $("#introduceNuevaNoticia").append("<div class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
+                "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" + "</div>");
+        }
+    });
+    window.location.href = "../NEWS/newNews.html"
+}
 
 $(document).ready(function () {
     $("#leerMas").click(function () {
@@ -70,20 +83,6 @@ $(document).ready(function () {
     $("#noticiaCompleta3").click(function () {
         window.location.href = "../NEWS/news3.html"
     });
-    $("#tester").click(function () {
-        let indiceNoticia = $("#nuevaNoticia").data("indice")
-        rellenarTemplate(indiceNoticia);
-    });
-
-    function pintarNoticia(jsonObject, indice) {
-        $.each(json, function (i, news) {
-            if (news.indice == indice) {
-                $("#introduceNuevaNoticia").append("<div class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
-                    "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" + "</div>");
-            }
-        });
-        window.location.href = "../NEWS/newNews.html"
-    }
 
     $(window).on("scroll", function () {
         var scrollHeight = $(document).height();
