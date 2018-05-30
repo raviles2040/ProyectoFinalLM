@@ -1,7 +1,8 @@
 let contador = 0;
-$("#noticiaCargada").ready(function() {
+$("#noticiaCargada").ready(function () {
     $("button.nuevaNoticia").click(function () {
         let indiceNoticia = $("nuevaNoticia").data("indice")
+        // var status = $(this).attr('data-status');
         alert("has pulsado el boton" + indiceNoticia)
     });
 })
@@ -41,12 +42,18 @@ $(document).ready(function () {
                         "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
                         "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
                         "</div>");
+                    $("#news").on('click', 'button.nuevaNoticia', function () {
+                        alert('El indice es el siguiente: ' + $(this).data('indice'));
+                    })
                 }
                 else {
                     $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
                         "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
                         "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
                         "</div>");
+                    $("#news").on('click', 'button.nuevaNoticia', function () {
+                        alert('El indice es el siguiente: ' + $(this).data('indice'));
+                    })
                 }
             });
             contador++;
@@ -61,12 +68,18 @@ $(document).ready(function () {
                         "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
                         "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
                         "</div>");
+                    $("#news").on('click', 'button.nuevaNoticia', function () {
+                        alert('El indice es el siguiente: ' + $(this).data('indice'));
+                    })
                 }
                 else {
                     $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
                         "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
                         "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" id=\"tester\" data-indice=" + news.indice + ">Leer más</button>" +
                         "</div>");
+                    $("#news").on('click', 'button.nuevaNoticia', function () {
+                        alert('El indice es el siguiente: ' + $(this).data('indice'));
+                    })
                 }
             });
             contador++;
