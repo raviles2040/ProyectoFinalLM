@@ -3,12 +3,13 @@ let contador = 0;
 function pintarJson() {
     switch (contador) {
         case 0:
-            imprimirTresPrimerasNoticias()
+            imprimirTresPrimerasNoticias();
             break;
         case 1:
-            imprimirTresUltimasNoticias()
+            imprimirTresUltimasNoticias();
             break;
-        default:
+        case 2:
+            ocultarBoton();
             break;
     }
 }
@@ -50,6 +51,9 @@ function imprimirTresUltimasNoticias() {
         });
         contador++;
     });
+}
+function ocultarBoton() {
+    $("#leerMas").css("display", "none");
 }
 
 $(document).ready(function () {
