@@ -45,7 +45,7 @@ function imprimirTresUltimasNoticias() {
             else {
                 $("#news").append("<div class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
                     "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
-                    "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
+                    "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" id=\"tester\" data-indice=" + news.indice + ">Leer más</button>" +
                     "</div>");
             }
         });
@@ -70,7 +70,7 @@ $(document).ready(function () {
     $("#noticiaCompleta3").click(function () {
         window.location.href = "../NEWS/news3.html"
     });
-    $("button.nuevaNoticia").click(function () {
+    $("#tester").click(function () {
         let indiceNoticia = $("#nuevaNoticia").data("indice")
         rellenarTemplate(indiceNoticia);
     });
