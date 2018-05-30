@@ -1,15 +1,16 @@
 let contador = 0;
 
-function pintarJson();
-switch (contador) {
-    case 0:
-        imprimirTresPrimerasNoticias()
-        break;
-    case 1:
-        imprimirTresUltimasNoticias()
-        break;
-    default:
-        break;
+function pintarJson() {
+    switch (contador) {
+        case 0:
+            imprimirTresPrimerasNoticias()
+            break;
+        case 1:
+            imprimirTresUltimasNoticias()
+            break;
+        default:
+            break;
+    }
 }
 function imprimirTresPrimerasNoticias() {
     $.getJSON("../DATA/1.json", function (jsonObject) {
