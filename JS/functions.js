@@ -1,13 +1,8 @@
 let contador = 0;
 
-$("#noticiaCargada").ready(function () {
-    $("button.nuevaNoticia").click(function () {
-        let indiceNoticia = $("nuevaNoticia").data("indice")
-        // var status = $(this).attr('data-status');
-        alert("has pulsado el boton" + indiceNoticia)
-    });
-})
+
 $(document).ready(function () {
+    $("embed-responsive-item").hide();
     $("#curiosidades").click(function random() {
         var random = Math.floor((Math.random() * 10) + 1);
         if (random >= 5) {
@@ -103,6 +98,8 @@ $(document).ready(function () {
                     }
                 });
                 $("#news").append(noticia);
+                $("embed-responsive-item").show();
+                
             });
         }
         else {
@@ -115,13 +112,14 @@ $(document).ready(function () {
                     }
                 });
                 $("#news").append(noticia);
+                $("embed-responsive-item").show();
             });
         }
     }
     $(window).on("scroll", function () {
         var scrollHeight = $(document).height();
         var scrollPosition = $(window).height() + $(window).scrollTop();
-        if ((scrollHeight - scrollPosition) / scrollHeight < 5) {
+        if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
             pintarJson();
         }
     });

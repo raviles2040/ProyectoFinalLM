@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+	<channel>
+		<title>Blog salvaje</title>
+		<link>https://rawgit.com/raul2040/Proyecto-final-LM/master/HTML/Home.html</link>
+		<description>Blog de noticias salvajes</description>
+		
+		<item>
+			<title>La única loba salvaje de Dinamarca en los últimos 200 años muere de un disparo</title>
+			<link>https://rawgit.com/raul2040/Proyecto-final-LM/master/NEWS/news1.html</link>
+			<description>
+				En 2012 un grupo de lobos salvajes fue enviado a Dinamarca después de la desaparición de la especie hace dos siglos. Desde
+                entonces, han llegado al país varios ejemplares. Entre ellos, una hembra, en 2017. Pero este lunes
+                la única loba salvaje que había en el país ha muerto tras recibir un tiro, según informa The Guardian.
+                Dos fotógrafos que observaban a los ejemplares en el municipio de Ulfborg grabaron el momento en
+                el que dispararon al animal.
+			</description>
+		</item>
+
+		<item>
+			<title>Las historias de horror de los parásitos que controlan la mente de sus víctima</title>
+			<link>https://rawgit.com/raul2040/Proyecto-final-LM/master/NEWS/news2.html</link>
+			<description>
+				 En la naturaleza que inspira las películas de Disney se pueden encontrar también los más espeluznantes relatos de terror.
+                Una de las mejores fuentes de ese tipo de historias son las relaciones entre parásitos y huéspedes
+                en el mundo de los insectos. Millones de años de evolución han permitido la aparición de sofisticados
+                mecanismos de algo parecido al control mental en el que las víctimas entregan sus vidas para beneficio
+                del organismo que les ha infectado.
+			</description>
+		</item>
+
+        <item>
+			<title>Los pájaros son mucho más listos de lo que pensamos</title>
+			<link>https://rawgit.com/raul2040/Proyecto-final-LM/master/NEWS/news3.html</link>
+			<description>
+				Es innegable: las aves no tienen pulgar oponible porque no tienen manos. Pero resulta que son, con los primates, el grupo
+                de vertebrados con el mayor número de especies que se sirven de objetos
+			</description>
+		</item>
+		
+	</channel>
+
+</rss>
