@@ -1,15 +1,15 @@
 let contador = 0;
 let style = "class=\"col-sm-6\""
 
-let json1 = $.getJSON("../DATA/1.json", function (jsonObject) {
-    return jsonObject;
-});
-
-let json2 = $.getJSON("../DATA/2.json", function (jsonObject) {
-    return jsonObject;
-});
 
 $(document).ready(function () {
+    let json1 = $.getJSON("../DATA/1.json", function (jsonObject) {
+        return jsonObject;
+    });
+
+    let json2 = $.getJSON("../DATA/2.json", function (jsonObject) {
+        return jsonObject;
+    });
     $("#leerMas").click(function () {
         pintarJson();
     });
