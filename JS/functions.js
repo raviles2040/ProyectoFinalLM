@@ -84,9 +84,7 @@ $(document).ready(function () {
                     $("#todoElContenido").click(function () {
                         $("#todoElContenido").hide();
                     });
-                    $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-6\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news[indice].title +
-                        "</h1>" + "<br>" + "<img src=" + news[indice].img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news[indice].description + "</p>" +
-                        "</div>");
+                    volcarNoticia(indice);
                 })
             })
             contador++;
@@ -106,14 +104,37 @@ $(document).ready(function () {
         });
         window.location.href = "../NEWS/newNews.html"
     }
-
-    $(window).on("scroll", function () {
-        var scrollHeight = $(document).height();
-        var scrollPosition = $(window).height() + $(window).scrollTop();
-        if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
-            pintarJson();
+    function volcarNoticia(indice) {
+        if (indice <= 3) {
+            $.getJSON("../DATA/1.json", function (jsonObject) {
+                $.each(jsonObject, function (i, news) {
+                    if (i == indice) {
+                        $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
+                            "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
+                            "</div>");
+                    }
+                });
+            });
         }
-    });
+        else {
+            $.getJSON("../DATA/2.json", function (jsonObject) {
+                $.each(jsonObject, function (i, news) {
+                    if (i == indice) {
+                        $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
+                            "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
+                            "</div>");
+                    }
+                });
+            });
+        }
+    }
+});
+$(window).on("scroll", function () {
+    var scrollHeight = $(document).height();
+    var scrollPosition = $(window).height() + $(window).scrollTop();
+    if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+        pintarJson();
+    }
 });
 
 
