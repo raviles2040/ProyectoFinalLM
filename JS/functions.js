@@ -45,10 +45,12 @@ $(document).ready(function () {
     function imprimirTresPrimerasNoticias() {
         $.getJSON("../DATA/1.json", function (jsonObject) {
             $.each(jsonObject, function (i, news) {
-                $("#newNews").append("<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
-                    "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
+                $("#newNews").append("<div id=\"noticiaCargada\" class=\"row featurette\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<div class=\"col-md-7\">" + "<h1 class=\"featurette-heading>\"" + news.title +
+                    "</h1>" + "<br>" + "<p class=\"lead\">" + news.description + "</p>" + "</div" +
+                    "<div class=\"col-md-5\">" +
+                    "<img src=" + news.img + " class=\"featurette-image img-fluid mx-auto\" style=\"width: 500px; height: 500px;\" " + ">" +
                     "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
-                    "</div>");
+                    "</div> </div>");
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
                     let indiceNoticia = $(this).data("indice");
                     let indice = parseInt(indiceNoticia)
@@ -65,10 +67,12 @@ $(document).ready(function () {
     function imprimirTresUltimasNoticias() {
         $.getJSON("../DATA/2.json", function (jsonObject) {
             $.each(jsonObject, function (i, news) {
-                $("#newNews").append("<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
-                    "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
+                $("#newNews").append("<div id=\"noticiaCargada\" class=\"row featurette\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<div class=\"col-md-7\">" + "<h1 class=\"featurette-heading>\"" + news.title +
+                    "</h1>" + "<br>" + "<p class=\"lead\">" + news.description + "</p>" + "</div" +
+                    "<div class=\"col-md-5\">" +
+                    "<img src=" + news.img + " class=\"featurette-image img-fluid mx-auto\" style=\"width: 500px; height: 500px;\" " + ">" +
                     "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
-                    "</div>");
+                    "</div> </div>");
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
                     let indiceNoticia = $(this).data("indice");
                     let indice = parseInt(indiceNoticia)
@@ -87,7 +91,7 @@ $(document).ready(function () {
     }
 
     function volcarNoticia(indice) {
-        let imagen,titulo,descripcion,noticia;
+        let imagen, titulo, descripcion, noticia;
         if (indice < 3) {
             $.getJSON("../DATA/1.json", function (jsonObject) {
                 $.each(jsonObject, function (i, news) {
@@ -102,7 +106,7 @@ $(document).ready(function () {
                 });
                 $("#news").append(noticia);
                 $("embed-responsive-item").show();
-                cambiarMeta(imagen,descripcion,titulo);
+                cambiarMeta(imagen, descripcion, titulo);
 
             });
         }
@@ -120,15 +124,15 @@ $(document).ready(function () {
                 });
                 $("#news").append(noticia);
                 $("embed-responsive-item").show();
-                cambiarMeta(imagen,descripcion,titulo);
+                cambiarMeta(imagen, descripcion, titulo);
             });
         }
     }
 
-    function cambiarMeta(imagen,titulo,descripcion) {
-        $("meta[property='og:image']").attr(("content", imagen));
-        $("meta[property='og:title']").attr(("content", titulo));
-        $("meta[property='og:description']").attr(("content", descripcion));
+    function cambiarMeta(imagen, titulo, descripcion) {
+        $("meta[property='og:image']").setAttribute(("content", imagen));
+        $("meta[property='og:title']").setAttribute(("content", titulo));
+        $("meta[property='og:description']").setAttribute(("content", descripcion));
     }
 
     $(window).on("scroll", function () {
