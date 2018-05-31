@@ -1,15 +1,12 @@
 let contador = 0;
-let style = "class=\"col-sm-6\""
-
-
+$("#noticiaCargada").ready(function () {
+    $("button.nuevaNoticia").click(function () {
+        let indiceNoticia = $("nuevaNoticia").data("indice")
+        // var status = $(this).attr('data-status');
+        alert("has pulsado el boton" + indiceNoticia)
+    });
+})
 $(document).ready(function () {
-    let json1 = $.getJSON("../DATA/1.json", function (jsonObject) {
-        return jsonObject;
-    });
-
-    let json2 = $.getJSON("../DATA/2.json", function (jsonObject) {
-        return jsonObject;
-    });
     $("#leerMas").click(function () {
         pintarJson();
     });
@@ -22,35 +19,76 @@ $(document).ready(function () {
     $("#noticiaCompleta3").click(function () {
         window.location.href = "../NEWS/news3.html"
     });
+    $("#cargar").click(function () {
+        $("#introduceNuevaNoticia").append("<h1>hola que tal </h1>");
+        window.location.href = "../NEWS/newNews.html"
+    });
 
     function pintarJson() {
         switch (contador) {
             case 0:
-                imprimirNoticias(json1);
+                imprimirTresPrimerasNoticias();
                 break;
             case 1:
-                imprimirNoticias(json2);
+                imprimirTresUltimasNoticias();
                 break;
             case 2:
                 ocultarBoton();
                 break;
         }
     }
-    function imprimirNoticias(json) {
-        $.each(json, function (i, news) {
-            if (i < 2) {
-                style = "class=\"col-sm-12\""
-            }
-            $("#news").append("<div id=\"noticiaCargada\" " + style + "style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
-                "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
-                "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
-                "</div>");
-            $("#news").on('click', 'button.nuevaNoticia', function () {
-                alert('El indice es el siguiente: ' + $(this).data('indice'));
-            })
+
+    function imprimirTresPrimerasNoticias() {
+        $.getJSON("../DATA/1.json", function (jsonObject) {
+            $.each(jsonObject, function (i, news) {
+                if (i < 2) {
+                    $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-6\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
+                        "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
+                        "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
+                        "</div>");
+                    $("#news").on('click', 'button.nuevaNoticia', function () {
+                        alert('El indice es el siguiente: ' + $(this).data('indice'));
+                    })
+                }
+                else {
+                    $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
+                        "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
+                        "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
+                        "</div>");
+                    $("#news").on('click', 'button.nuevaNoticia', function () {
+                        alert('El indice es el siguiente: ' + $(this).data('indice'));
+                    })
+                }
+            });
+            contador++;
         });
-        contador++;
-    };
+    }
+
+    function imprimirTresUltimasNoticias() {
+        $.getJSON("../DATA/2.json", function (jsonObject) {
+            $.each(jsonObject, function (i, news) {
+                if (i < 2) {
+                    $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-6\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
+                        "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
+                        "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
+                        "</div>");
+                    $("#news").on('click', 'button.nuevaNoticia', function () {
+                        alert('El indice es el siguiente: ' + $(this).data('indice'));
+                    })
+                }
+                else {
+                    $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
+                        "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
+                        "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" id=\"tester\" data-indice=" + news.indice + ">Leer más</button>" +
+                        "</div>");
+                    $("#news").on('click', 'button.nuevaNoticia', function () {
+                        alert('El indice es el siguiente: ' + $(this).data('indice'));
+                    })
+                }
+            });
+            contador++;
+        });
+    }
 
     function ocultarBoton() {
         $("#leerMas").css("display", "none");
@@ -74,3 +112,7 @@ $(document).ready(function () {
         }
     });
 });
+
+
+
+
