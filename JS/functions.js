@@ -75,7 +75,7 @@ $(document).ready(function () {
                     "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
                     "</div>");
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
-                    let indiceNoticia = $("nuevaNoticia").data("indice")
+                    let indiceNoticia = $(this).data("indice");
                     let indice = parseInt(indiceNoticia)
                     $("#todoElContenido").click(function () {
                         $("#todoElContenido").hide();
@@ -99,6 +99,7 @@ $(document).ready(function () {
                         $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
                             "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
                             "</div>");
+                        return false;
                     }
                 });
             });
@@ -110,19 +111,20 @@ $(document).ready(function () {
                         $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
                             "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
                             "</div>");
+                        return false;
                     }
                 });
             });
         }
     }
+});
 
-    $(window).on("scroll", function () {
-        var scrollHeight = $(document).height();
-        var scrollPosition = $(window).height() + $(window).scrollTop();
-        if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
-            pintarJson();
-        }
-    });
+$(window).on("scroll", function() {
+    var scrollHeight = $(document).height();
+    var scrollPosition = $(window).height() + $(window).scrollTop();
+    if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+        alert("ha funcionado");
+    }
 });
 
 
