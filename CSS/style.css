@@ -27,4 +27,47 @@ p{
     margin-bottom: 20px;
     padding-bottom: 50px;
 }
+a.facebook{
+    width: 30px;
+    height: 30px;
+    display:inline-block;
+    background: url(./IMG/facebook.png);
+}
 
+a.facebook:hover{
+    width:50px;
+    height: 50px;
+}
+
+a.twitter{
+    background: url(./IMG/twitter.png);
+    display:inline-block;
+    width:30px;
+    height:30px;
+
+}
+a.twitter:hover{
+    width:50px;
+    height: 50px;
+}
+
+
+a.instagram{
+    display:inline-block;
+    background: url(./IMG/instagram.jpg);
+    width:30px;
+    height:30px;
+}
+
+a.instagram:hover{
+    width:50px;
+    height: 50px;
+}
+
+
+a.googleplus{
+    display:inline-block;
+    background: url(./IMG/googleplus.jpg);
+    width:30px;
+    height:30px;
+}
