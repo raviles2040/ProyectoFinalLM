@@ -55,7 +55,7 @@ $(document).ready(function () {
                     "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
                     "</div>");
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
-                    let indiceNoticia = $("nuevaNoticia").data("indice")
+                    let indiceNoticia = $(this).data("indice");
                     let indice = parseInt(indiceNoticia)
                     $("#todoElContenido").click(function () {
                         $("#todoElContenido").hide();
