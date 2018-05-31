@@ -92,10 +92,10 @@ $(document).ready(function () {
     }
 
     function volcarNoticia(indice) {
-        if (indice <= 3) {
+        if (indice < 3) {
             $.getJSON("../DATA/1.json", function (jsonObject) {
                 $.each(jsonObject, function (i, news) {
-                    if (news.indice == indice) {
+                    if (i == indice) {
                         $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
                             "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
                             "</div>");
@@ -107,7 +107,7 @@ $(document).ready(function () {
         else {
             $.getJSON("../DATA/2.json", function (jsonObject) {
                 $.each(jsonObject, function (i, news) {
-                    if (news.indice == indice) {
+                    if (i == indice) {
                         $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
                             "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
                             "</div>");
@@ -117,15 +117,16 @@ $(document).ready(function () {
             });
         }
     }
+    $(window).on("scroll", function() {
+        var scrollHeight = $(document).height();
+        var scrollPosition = $(window).height() + $(window).scrollTop();
+        if ((scrollHeight - scrollPosition) / scrollHeight < 50) {
+            pintarJson();
+        }
+    });
 });
 
-$(window).on("scroll", function() {
-    var scrollHeight = $(document).height();
-    var scrollPosition = $(window).height() + $(window).scrollTop();
-    if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
-        alert("ha funcionado");
-    }
-});
+
 
 
 
