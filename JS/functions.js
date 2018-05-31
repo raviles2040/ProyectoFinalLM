@@ -25,10 +25,7 @@ $(document).ready(function () {
     $("#noticiaCompleta3").click(function () {
         window.location.href = "../HTML/news3.html"
     });
-    $("#cargar").click(function () {
-        $("#introduceNuevaNoticia").append("<h1>hola que tal </h1>");
-        window.location.href = "../NEWS/newNews.html"
-    });
+    
 
     function pintarJson() {
         switch (contador) {
@@ -53,7 +50,9 @@ $(document).ready(function () {
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
                     let indiceNoticia = $(this).data("indice");
                     let indice = parseInt(indiceNoticia)
-                    $("#todoElContenido").hide();
+                    $("#todoElContenido").click(function () {
+                        $("#todoElContenido").hide();
+                    })
                     volcarNoticia(indice);
                 })
             })
@@ -72,7 +71,9 @@ $(document).ready(function () {
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
                     let indiceNoticia = $(this).data("indice");
                     let indice = parseInt(indiceNoticia)
-                    $("#todoElContenido").hide();
+                    $("#todoElContenido").click(function () {
+                        $("#todoElContenido").hide();
+                    })
                     volcarNoticia(indice);
                 })
             })
