@@ -57,11 +57,13 @@ $(document).ready(function () {
                     "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
                     "</div>");
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
+                    let indiceNoticia = $("nuevaNoticia").data("indice")
+                    let indice = parseInt(indiceNoticia)
                     $("#todoElContenido").click(function () {
                         $("#todoElContenido").hide();
                     });
-                    $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-6\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
-                        "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
+                    $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-6\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news[indice].title +
+                        "</h1>" + "<br>" + "<img src=" + news[indice].img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news[indice].description + "</p>" +
                         "</div>");
                 })
             })
@@ -77,11 +79,13 @@ $(document).ready(function () {
                     "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
                     "</div>");
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
+                    let indiceNoticia = $("nuevaNoticia").data("indice")
+                    let indice = parseInt(indiceNoticia)
                     $("#todoElContenido").click(function () {
                         $("#todoElContenido").hide();
                     });
-                    $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-6\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
-                        "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
+                    $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-6\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news[indice].title +
+                        "</h1>" + "<br>" + "<img src=" + news[indice].img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news[indice].description + "</p>" +
                         "</div>");
                 })
             })
