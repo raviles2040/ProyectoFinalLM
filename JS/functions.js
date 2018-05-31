@@ -42,8 +42,6 @@ $(document).ready(function () {
                 break;
             case 1:
                 imprimirTresUltimasNoticias();
-                break;
-            case 2:
                 ocultarBoton();
                 break;
         }
@@ -62,9 +60,7 @@ $(document).ready(function () {
                     $("#todoElContenido").click(function () {
                         $("#todoElContenido").hide();
                     });
-                    $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-6\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news[indice].title +
-                        "</h1>" + "<br>" + "<img src=" + news[indice].img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news[indice].description + "</p>" +
-                        "</div>");
+                    volcarNoticia(indice);
                 })
             })
             contador++;
@@ -95,20 +91,11 @@ $(document).ready(function () {
         $("#leerMas").css("display", "none");
     }
 
-    function pintarNoticia(jsonObject, indice) {
-        $.each(json, function (i, news) {
-            if (news.indice == indice) {
-                $("#introduceNuevaNoticia").append("<div class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
-                    "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" + "</div>");
-            }
-        });
-        window.location.href = "../NEWS/newNews.html"
-    }
     function volcarNoticia(indice) {
         if (indice <= 3) {
             $.getJSON("../DATA/1.json", function (jsonObject) {
                 $.each(jsonObject, function (i, news) {
-                    if (i == indice) {
+                    if (news.indice == indice) {
                         $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
                             "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
                             "</div>");
@@ -119,7 +106,7 @@ $(document).ready(function () {
         else {
             $.getJSON("../DATA/2.json", function (jsonObject) {
                 $.each(jsonObject, function (i, news) {
-                    if (i == indice) {
+                    if (news.indice == indice) {
                         $("#news").append("<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
                             "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
                             "</div>");
@@ -128,13 +115,14 @@ $(document).ready(function () {
             });
         }
     }
-});
-$(window).on("scroll", function () {
-    var scrollHeight = $(document).height();
-    var scrollPosition = $(window).height() + $(window).scrollTop();
-    if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
-        pintarJson();
-    }
+
+    $(window).on("scroll", function () {
+        var scrollHeight = $(document).height();
+        var scrollPosition = $(window).height() + $(window).scrollTop();
+        if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+            pintarJson();
+        }
+    });
 });
 
 
