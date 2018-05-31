@@ -1,125 +1,213 @@
-<script> 
-    $(function () {
+<!DOCTYPE html>
+<html lang="es">
 
-        // Cache some selectors
+<head>
+    <!-- Encabezado y title -->
+    <title>Espacio Salvaje</title>
 
-        var clock = $('#clock'),
-            alarm = clock.find('.alarm'),
-            ampm = clock.find('.ampm');
+    <!-- OPEN GRAPH  -->
+    <meta property="og:site_name" content="Noticias Salvaje">
+    <meta property="og:url" content="https://rawgit.com/raul2040/Proyecto-final-LM/master/HTML/Home.html">
+    <meta property="og:title" content="Entra y descubre tu lado más SALVAJE">
+    <meta property="og:image" content="https://mirandodesdelpuente.files.wordpress.com/2017/11/tigre-agresivo.jpg">
+    <meta property="og:description" content="El blog de noticias más salvaje">
+    <meta charset="utf-8" />
+    <meta name="description" content="Proyecto de lenguaje de marcas (Noticias) uso de HTML/BOOTSTRAP/JSON/JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='../CSS/style.css'>
+    <link rel='stylesheet' href='style.css'>
+    <link href="./../CSS/style1.css" rel="stylesheet">
+    <!-- <link rel='stylesheet' media='screen and (max-width: 960px)' href='css/'> -->
 
-        // Map digits to their names (this will be an array)
-        var digit_to_name = 'zero one two three four five six seven eight nine'.split(' ');
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-        // This object will hold the digit elements
-        var digits = {};
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../JS/functions.js"></script>
 
-        // Positions for the hours, minutes, and seconds
-        var positions = [
-            'h1', 'h2', ':', 'm1', 'm2', ':', 's1', 's2'
-        ];
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/ulg/popper.min.js"></script>
 
-        // Generate the digits with the needed markup,
-        // and add them to the clock
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
 
-        var digit_holder = clock.find('.digits');
-
-        $.each(positions, function () {
-
-            if (this == ':') {
-                digit_holder.append('<div class="dots">');
-            }
-            else {
-
-                var pos = $('<div>');
-
-                for (var i = 1; i < 8; i++) {
-                    pos.append('<span class="d' + i + '">');
-                }
-
-                // Set the digits as key:value pairs in the digits object
-                digits[this] = pos;
-
-                // Add the digit elements to the page
-                digit_holder.append(pos);
-            }
-
-        });
-
-        // Add the weekday names
-
-        var weekday_names = 'MON TUE WED THU FRI SAT SUN'.split(' '),
-            weekday_holder = clock.find('.weekdays');
-
-        $.each(weekday_names, function () {
-            weekday_holder.append('<span>' + this + '</span>');
-        });
-
-        var weekdays = clock.find('.weekdays span');
-
-        // Run a timer every second and update the clock
-
-        (function update_time() {
-
-            // Use moment.js to output the current time as a string
-            // hh is for the hours in 12-hour format,
-            // mm - minutes, ss-seconds (all with leading zeroes),
-            // d is for day of week and A is for AM/PM
-
-            var now = moment().format("hhmmssdA");
-
-            digits.h1.attr('class', digit_to_name[now[0]]);
-            digits.h2.attr('class', digit_to_name[now[1]]);
-            digits.m1.attr('class', digit_to_name[now[2]]);
-            digits.m2.attr('class', digit_to_name[now[3]]);
-            digits.s1.attr('class', digit_to_name[now[4]]);
-            digits.s2.attr('class', digit_to_name[now[5]]);
-
-            // The library returns Sunday as the first day of the week.
-            // Stupid, I know. Lets shift all the days one position down, 
-            // and make Sunday last
-
-            var dow = now[6];
-            dow--;
-
-            // Sunday!
-            if (dow < 0) {
-                // Make it last
-                dow = 6;
-            }
-
-            // Mark the active day of the week
-            weekdays.removeClass('active').eq(dow).addClass('active');
-
-            // Set the am/pm text:
-            ampm.text(now[7] + now[8]);
-
-            // Schedule this function to be run again in 1 sec
-            setTimeout(update_time, 1000);
-
-        })();
-
-        // Switch the theme
-
-        $('a.button').click(function () {
-            clock.toggleClass('light dark');
-        });
-
-    }); </script>
-<div id="clock" class="light">
-    <div class="display">
-        <div class="weekdays"></div>
-        <div class="ampm"></div>
-        <div class="alarm"></div>
-        <div class="digits">
-            <div class="zero">
-                <span class="d1"></span>
-                <span class="d2"></span>
-                <span class="d3"></span>
-                <span class="d4"></span>
-                <span class="d5"></span>
-                <span class="d6"></span>
-                <span class="d7"></span>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">Blog Salvaje</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Home.html">Inicio
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="curiosidades" href="#">Curiosidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="buscar" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
             </div>
+        </nav>
+    </header>
+    <div class="jumbotron jumbotron-fluid" style="padding:0px;">
+        <!-- Barra de navegación  -->
+
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./../CSS/IMG/background (1).jpg" class="img-responsive" alt="">
+                    <div class="carousel-caption text-left">
+                        <h1>Sumergete en tu lado más Salvaje</h1>
+                        <p>Web dedicada a noticias sobre animales en libertad, por un mundo libre y sobretodo por un mundo salvaje.
+                        </p>
+                        <p>
+                            <a class="btn btn-lg btn-primary" href="#" role="button">Inicia sesión</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./../CSS/IMG/animales (1).jpg" class="img-responsive" alt="">
+                    <div class="carousel-caption text-left">
+                        <h1>Sumergete en tu lado más Salvaje</h1>
+                        <p>Web dedicada a noticias sobre animales en libertad, por un mundo libre y sobretodo por un mundo salvaje.
+                        </p>
+                        <p>
+                            <a class="btn btn-lg btn-primary" href="#" role="button">Inicia sesión</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./../CSS/IMG/animales (2).jpg" class="img-responsive" alt="">
+                    <div class="carousel-caption text-left">
+                        <h1>Sumergete en tu lado más Salvaje</h1>
+                        <p>Web dedicada a noticias sobre animales en libertad, por un mundo libre y sobretodo por un mundo salvaje.
+                        </p>
+                        <p>
+                            <a class="btn btn-lg btn-primary" href="#" role="button">Inicia sesión</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
         </div>
     </div>
-</div>
+    </header>
+    <div id="todoElContenido">
+        <main role="main">
+
+            <div class="row featurette">
+                <div class="col-md-8" style="margin: auto;">
+                    <h2 class="featurette-heading">La única loba salvaje de Dinamarca en los últimos 200 años muere de un disparo</h2>
+                    <div class="col-md-12" style="text-align: center;">
+                        <img class="featurette-image img-fluid mx-auto" src="../CSS/IMG/Loba.jpg" alt="Generic placeholder image">
+                    </div>
+                    <p class="lead">
+                        En 2012 un grupo de lobos salvajes fue enviado a Dinamarca después de la desaparición de la especie hace dos siglos. Desde
+                        entonces, han llegado al país varios ejemplares. Entre ellos, una hembra, en 2017. Pero este lunes
+                        la única loba salvaje que había en el país ha muerto tras recibir un tiro, según informa The Guardian.
+                        Dos fotógrafos que observaban a los ejemplares en el municipio de Ulfborg grabaron el momento en
+                        el que dispararon al animal. En el vídeo, se ve como un tiro alcanza a la hembra, que cae desplomada.
+                        MÁS INFORMACIÓN La única loba salvaje de Dinamarca en los últimos 200 años muere de un disparo Por
+                        qué los lobos también saben mostrar clemencia El niño lobo pasa frío en el mundo de los hombres El
+                        último refugio del lobo ibérico La loba, que había viajado más de 450 kilómetros desde Alemania a
+                        Dinamarca, formaba parte de una manada en la región. El país había estado dos siglos sin ningún lobo
+                        salvaje hasta 2012, pues al último ejemplar en Dinamarca lo mataron en 1813. Ahora, la muerte de
+                        la loba supone una amenaza para la supervivencia de la especie. El cazador disparó al animal desde
+                        su vehículo y, tras matarlo, se dio a la fuga. Gracias al vídeo, la policía danesa ha podido identificar
+                        y detener al dueño del vehículo, que está acusado de violar la ley de caza de Dinamarca. El acusado,
+                        de 66 años, niega los hechos. En Europa viven más de 12.000 lobos En Europa continental — excluyendo
+                        a Rusia, Ucrania y Bielorrusia — hay más de 12.000 lobos. En las últimas décadas se han distribuido
+                        varios ejemplares por este territorio. Después de siglos de persecución, se ha incentivado que aumente
+                        la población de estos ejemplares en lugares como Francia o Alemania. El pasado invierno los lobos
+                        salvajes llegaron a Bélgica, que era el último país de la Europa continental sin lobos. Guillaume
+                        Chapron, un profesor asociado de la Universidad Sueca de Ciencias Agrícolas, ha explicado a The Guardian
+                        que esta muerte es "completamente inaceptable", ya que la loba no mostró señales de comportamiento
+                        agresivo antes de recibir el disparo, sino "más bien una mezcla de precaución y curiosidad". "A partir
+                        de la grabación de vídeo del comportamiento animal, no hubo absolutamente ninguna amenaza para los
+                        humanos y tampoco hubo indicios de que este animal pudiera convertirse en una amenaza", ha afirmado.
+                        En Dinamarca, los lobos se han asentado en una zona bien cultivada de páramos y pequeñas plantaciones
+                        de pinos donde destacan las poblaciones de ciervos rojos y corzos. La policía danesa ha informado
+                        de que el ejemplar disparado estaba en las tierras de un político danés del partido Alianza Liberal
+                        candidato al parlamento. Se trata de Steffen Troldtoft, que además es miembro del Gobierno de coalición.
+                        El hombre que mató al animal, según el periódico danés Altinget, era uno de sus familiares. Esto
+                        ha llevado a Troldoft a retirar su candidatura "debido a la tormenta de los medios".
+                    </p>
+                </div>
+                <div class="containerVideo">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/tlyomP5dawY"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!-- FOOTER -->
+    <footer style="text-align: center;">
+        <p>&copy; Blog Salvaje &middot;
+            <a href="#">Privacidad</a> &middot;
+            <a href="#">Terminos de uso</a>
+        </p>
+    </footer>
+    </main>
+    <div class="class=" row featurette "">
+        <div id="news" class="col-md-7">
+
+        </div>
+    </div>
+    <div class="social">
+        <ul>
+            <li>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcdn.rawgit.com/raul2040/Proyecto-final-LM/13d40e35/HTML/Home.html"
+                    target="_blank" class="icon-facebook"></a>
+            </li>
+            <li>
+                <a href="https://twitter.com/home?status=https%3A//cdn.rawgit.com/raul2040/Proyecto-final-LM/13d40e35/HTML/Home.html" target="_blank"
+                    class="icon-twitter"></a>
+            </li>
+            <li>
+                <a href="https://plus.google.com/share?url=https%3A//cdn.rawgit.com/raul2040/Proyecto-final-LM/13d40e35/HTML/Home.html" target="_blank"
+                    class="icon-google-plus2"></a>
+            </li>
+            <li>
+                <a href="https://instagram.com/share?url=https%3A//cdn.rawgit.com/raul2040/Proyecto-final-LM/13d40e35/HTML/Home.html" target="_blank"
+                    class="icon-instagram"></a>
+            </li>
+            <li>
+                <a href="mailto:raul2040@outlook.es" class="icon-mail2"></a>
+            </li>
+        </ul>
+    </div>
+    </main>
+</body>

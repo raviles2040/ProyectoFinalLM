@@ -6,10 +6,10 @@ $(document).ready(function () {
     $("#curiosidades").click(function random() {
         var random = Math.floor((Math.random() * 10) + 1);
         if (random >= 5) {
-            window.location.href = "../NEWS/news2.html"
+            window.location.href = "../HTML/news2.html"
         }
         else {
-            window.location.href = "../NEWS/news3.html"
+            window.location.href = "../HTML/news3.html"
         }
     });
 
@@ -17,13 +17,13 @@ $(document).ready(function () {
         pintarJson();
     });
     $("#noticiaCompleta1").click(function () {
-        window.location.href = "../NEWS/news1.html"
+        window.location.href = "../HTML/news1.html"
     });
     $("#noticiaCompleta2").click(function () {
-        window.location.href = "../NEWS/news2.html"
+        window.location.href = "../HTML/news2.html"
     });
     $("#noticiaCompleta3").click(function () {
-        window.location.href = "../NEWS/news3.html"
+        window.location.href = "../HTML/news3.html"
     });
     $("#cargar").click(function () {
         $("#introduceNuevaNoticia").append("<h1>hola que tal </h1>");
@@ -45,10 +45,9 @@ $(document).ready(function () {
     function imprimirTresPrimerasNoticias() {
         $.getJSON("../DATA/1.json", function (jsonObject) {
             $.each(jsonObject, function (i, news) {
-                $("#newNews").append("<div id=\"noticiaCargada\" class=\"row featurette\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<div class=\"col-md-7\">" + "<h1 class=\"featurette-heading>\"" + news.title +
-                    "</h1>" + "<br>" + "<p class=\"lead\">" + news.description + "</p>" + "</div" +
+                $("#newNews").append("<div id=\"noticiaCargada\" class=\"row featurette\" > <div class=\"col-md-8\" style=\"margin:auto;\">" + "<h2 class=\"featurette-heading>\"" + news.title +
+                    "</h2>" + "<div class\"col-md-12\" style=\"text-align:center;\">" + "<img src=" + news.img + " class=\"featurette-image img-fluid mx-auto\">" + "</div>" + "<p class=\"lead\">" + news.description + "</p>" + "</div" +
                     "<div class=\"col-md-5\">" +
-                    "<img src=" + news.img + " class=\"featurette-image img-fluid mx-auto\" style=\"width: 500px; height: 500px;\" " + ">" +
                     "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
                     "</div> </div>");
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
@@ -67,10 +66,9 @@ $(document).ready(function () {
     function imprimirTresUltimasNoticias() {
         $.getJSON("../DATA/2.json", function (jsonObject) {
             $.each(jsonObject, function (i, news) {
-                $("#newNews").append("<div id=\"noticiaCargada\" class=\"row featurette\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<div class=\"col-md-7\">" + "<h1 class=\"featurette-heading>\"" + news.title +
-                    "</h1>" + "<br>" + "<p class=\"lead\">" + news.description + "</p>" + "</div" +
+                $("#newNews").append("<div id=\"noticiaCargada\" class=\"row featurette\" > <div class=\"col-md-8\" style=\"margin:auto;\">" + "<h2 class=\"featurette-heading>\"" + news.title +
+                    "</h2>" + "<div class\"col-md-12\" style=\"text-align:center;\">" + "<img src=" + news.img + " class=\"featurette-image img-fluid mx-auto\">" + "</div>" + "<p class=\"lead\">" + news.description + "</p>" + "</div" +
                     "<div class=\"col-md-5\">" +
-                    "<img src=" + news.img + " class=\"featurette-image img-fluid mx-auto\" style=\"width: 500px; height: 500px;\" " + ">" +
                     "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
                     "</div> </div>");
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
@@ -130,9 +128,9 @@ $(document).ready(function () {
     }
 
     function cambiarMeta(imagen, titulo, descripcion) {
-        $("meta[property='og:image']").setAttribute(("content", imagen));
-        $("meta[property='og:title']").setAttribute(("content", titulo));
-        $("meta[property='og:description']").setAttribute(("content", descripcion));
+        $("meta[property='og:image']").attr(("content", imagen));
+        $("meta[property='og:title']").attr(("content", titulo));
+        $("meta[property='og:description']").attr(("content", descripcion));
     }
 
     $(window).on("scroll", function () {
