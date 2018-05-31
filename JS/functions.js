@@ -87,11 +87,14 @@ $(document).ready(function () {
     }
 
     function volcarNoticia(indice) {
-        let noticia;
+        let imagen,titulo,descripcion,noticia;
         if (indice < 3) {
             $.getJSON("../DATA/1.json", function (jsonObject) {
                 $.each(jsonObject, function (i, news) {
                     if (news.indice == indice) {
+                        imagen = news.img;
+                        titulo = news.title;
+                        descripcion = news.description;
                         noticia = "<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
                             "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
                             "</div>";
@@ -99,13 +102,17 @@ $(document).ready(function () {
                 });
                 $("#news").append(noticia);
                 $("embed-responsive-item").show();
-                
+                cambiarMeta(imagen,descripcion,titulo);
+
             });
         }
         else {
             $.getJSON("../DATA/2.json", function (jsonObject) {
                 $.each(jsonObject, function (i, news) {
                     if (news.indice == indice) {
+                        imagen = news.img;
+                        titulo = news.title;
+                        descripcion = news.description;
                         noticia = "<div id=\"noticiaCargada\" class=\"col-sm-12\" style=\"background-color:lavenderblush;\" + " + i + ">" + "<h1>" + news.title +
                             "</h1>" + "<br>" + "<img src=" + news.img + " class=\"col-sm-12\" style=\"background-color:lavenderblush;\" " + ">" + "<p>" + news.description + "</p>" +
                             "</div>";
@@ -113,8 +120,15 @@ $(document).ready(function () {
                 });
                 $("#news").append(noticia);
                 $("embed-responsive-item").show();
+                cambiarMeta(imagen,descripcion,titulo);
             });
         }
+    }
+
+    function cambiarMeta(imagen,titulo,descripcion) {
+        $("meta[property='og:image']").setAttribute(("content", imagen));
+        $("meta[property='og:title']").setAttribute(("content", titulo));
+        $("meta[property='og:description']").setAttribute(("content", descripcion));
     }
     $(window).on("scroll", function () {
         var scrollHeight = $(document).height();
