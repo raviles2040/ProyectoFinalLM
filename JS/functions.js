@@ -126,10 +126,11 @@ $(document).ready(function () {
     }
 
     function cambiarMeta(imagen,titulo,descripcion) {
-        $("meta[property='og:image']").setAttribute(("content", imagen));
-        $("meta[property='og:title']").setAttribute(("content", titulo));
-        $("meta[property='og:description']").setAttribute(("content", descripcion));
+        $("meta[property='og:image']").attr(("content", imagen));
+        $("meta[property='og:title']").attr(("content", titulo));
+        $("meta[property='og:description']").attr(("content", descripcion));
     }
+
     $(window).on("scroll", function () {
         var scrollHeight = $(document).height();
         var scrollPosition = $(window).height() + $(window).scrollTop();
