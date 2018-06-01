@@ -2,7 +2,7 @@ let contador = 0;
 
 
 $(document).ready(function () {
-    $("embed-responsive-item").hide();
+    $("#video").hide();
     $("#curiosidades").click(function random() {
         var random = Math.floor((Math.random() * 10) + 1);
         if (random >= 5) {
@@ -93,12 +93,11 @@ $(document).ready(function () {
                         noticia = "<div id=\"noticiaCargada\" class=\"row featurette\" > <div class=\"col-md-8\" style=\"margin:auto;\">" + "<h2 class=\"featurette-heading>\"" + news.title +
                             "</h2>" + "<div class\"col-md-12\" style=\"text-align:center;\">" + "<img src=" + news.img + " class=\"featurette-image img-fluid mx-auto\">" + "</div>" + "<p class=\"lead\">" + news.description + "</p>" + "</div" +
                             "<div class=\"col-md-5\">" +
-                            "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
                             "</div> </div>";
                     }
                 });
                 $("#news").append(noticia);
-                $("embed-responsive-item").show();
+                $("video").show();
                 cambiarMeta(imagen, descripcion, titulo);
 
             });
@@ -113,12 +112,11 @@ $(document).ready(function () {
                         noticia = "<div id=\"noticiaCargada\" class=\"row featurette\" > <div class=\"col-md-8\" style=\"margin:auto;\">" + "<h2 class=\"featurette-heading>\"" + news.title +
                             "</h2>" + "<div class\"col-md-12\" style=\"text-align:center;\">" + "<img src=" + news.img + " class=\"featurette-image img-fluid mx-auto\">" + "</div>" + "<p class=\"lead\">" + news.description + "</p>" + "</div" +
                             "<div class=\"col-md-5\">" +
-                            "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" +
                             "</div> </div>";
                     }
                 });
                 $("#news").append(noticia);
-                $("embed-responsive-item").show();
+                $("video").show();
                 cambiarMeta(imagen, descripcion, titulo);
             });
         }
