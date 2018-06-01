@@ -44,7 +44,7 @@ $(document).ready(function () {
             $.each(jsonObject, function (i, news) {
                 $("#newNews").append("<div id=\"noticiaCargada\" class=\"row featurette\" > <div class=\"col-md-7\">" + "<h2 class=\"featurette-heading\">" + news.title +
                     "</h2>" + "<p class=\"lead\">" + news.description + "</p>" +
-                    "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" + "</div>" +
+                    "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Noticia Completa</button>" + "</div>" +
                     "<div class=\"col-md-5\">" + "<img src=" + news.img + "  class=\"featurette-image img-fluid mx-auto\">" + "</div>" +
                     "</div> </div>  +  <hr class=\"featurette-divider\">");
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
@@ -63,7 +63,7 @@ $(document).ready(function () {
             $.each(jsonObject, function (i, news) {
                 $("#newNews").append("<div id=\"noticiaCargada\" class=\"row featurette\" > <div class=\"col-md-7\">" + "<h2 class=\"featurette-heading\">" + news.title +
                     "</h2>" + "<p class=\"lead\">" + news.description + "</p>" +
-                    "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" + "</div>" +
+                    "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Noticia Completa</button>" + "</div>" +
                     "<div class=\"col-md-5\">" + "<img src=" + news.img + "  class=\"featurette-image img-fluid mx-auto\">" + "</div>" +
                     "</div> </div>  +  <hr class=\"featurette-divider\">");
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
