@@ -46,12 +46,12 @@ $(document).ready(function () {
                     "</h2>" + "<p class=\"lead\">" + news.description + "</p>" +
                     "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" + "</div>" +
                     "<div class=\"col-md-5\">" + "<img src=" + news.img + "  class=\"featurette-image img-fluid mx-auto\">" + "</div>" +
-                    "</div> </div>");
+                    "</div> </div>  +  <hr class=\"featurette-divider\">");
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
                     let indiceNoticia = $(this).data("indice");
                     let indice = parseInt(indiceNoticia)
-                    $("#todoElContenido").click(function () {
-                        $("#todoElContenido").hide();
+                    $("#newNews").click(function () {
+                        $("#newNews").hide();
                     })
                     volcarNoticia(indice);
                 })
@@ -67,13 +67,11 @@ $(document).ready(function () {
                     "</h2>" + "<p class=\"lead\">" + news.description + "</p>" +
                     "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" + "</div>" +
                     "<div class=\"col-md-5\">" + "<img src=" + news.img + "  class=\"featurette-image img-fluid mx-auto\">" + "</div>" +
-                    "</div> </div>");
+                    "</div> </div>  +  <hr class=\"featurette-divider\">");
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
                     let indiceNoticia = $(this).data("indice");
                     let indice = parseInt(indiceNoticia)
-                    $("#todoElContenido").click(function () {
-                        $("#todoElContenido").hide();
-                    })
+                    $("#newNews").hide();
                     volcarNoticia(indice);
                 })
             })
