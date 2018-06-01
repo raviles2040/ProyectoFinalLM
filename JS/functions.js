@@ -50,9 +50,7 @@ $(document).ready(function () {
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
                     let indiceNoticia = $(this).data("indice");
                     let indice = parseInt(indiceNoticia)
-                    $("#newNews").click(function () {
-                        $("#newNews").hide();
-                    })
+                    $("#newNews").hide();
                     volcarNoticia(indice);
                 })
             })
