@@ -45,7 +45,7 @@ $(document).ready(function () {
                 $("#newNews").append("<div id=\"noticiaCargada\" class=\"row featurette\" > <div class=\"col-md-7\">" + "<h2 class=\"featurette-heading\">" + news.title +
                     "</h2>" + "<p class=\"lead\">" + news.description + "</p>" +
                     "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" + "</div>" +
-                    "<div class=\"col-md-5\">" + "<img src=" + news.img + "class=\"featurette-image img-fluid mx-auto\" >" + "</div>" +
+                    "<div class=\"col-md-5\">" + "<img src=" + news.img + "  class=\"featurette-image img-fluid mx-auto\">" + "</div>" +
                     "</div> </div>");
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
                     let indiceNoticia = $(this).data("indice");
@@ -66,7 +66,7 @@ $(document).ready(function () {
                 $("#newNews").append("<div id=\"noticiaCargada\" class=\"row featurette\" > <div class=\"col-md-7\">" + "<h2 class=\"featurette-heading\">" + news.title +
                     "</h2>" + "<p class=\"lead\">" + news.description + "</p>" +
                     "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Leer más</button>" + "</div>" +
-                    "<div class=\"col-md-5\">" + "<img src=" + news.img + "class=\"featurette-image img-fluid mx-auto\" >" + "</div>" +
+                    "<div class=\"col-md-5\">" + "<img src=" + news.img + "  class=\"featurette-image img-fluid mx-auto\">" + "</div>" +
                     "</div> </div>");
                 $("#newNews").on('click', 'button.nuevaNoticia', function () {
                     let indiceNoticia = $(this).data("indice");
