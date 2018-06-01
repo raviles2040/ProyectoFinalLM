@@ -25,7 +25,7 @@ $(document).ready(function () {
     $("#noticiaCompleta3").click(function () {
         window.location.href = "../HTML/news3.html"
     });
-    
+
 
     function pintarJson() {
         switch (contador) {
