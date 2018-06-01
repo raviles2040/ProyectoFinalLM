@@ -42,6 +42,7 @@ $(document).ready(function () {
     function imprimirTresPrimerasNoticias() {
         $.getJSON("../DATA/1.json", function (jsonObject) {
             $.each(jsonObject, function (i, news) {
+                console.log(news)
                 $("#newNews").append("<div id=\"noticiaCargada\" class=\"row featurette\" > <div class=\"col-md-7\">" + "<h2 class=\"featurette-heading\">" + news.title +
                     "</h2>" + "<p class=\"lead\">" + news.miniDescripcion + "</p>" +
                     "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Noticia Completa</button>" + "</div>" +
@@ -61,6 +62,7 @@ $(document).ready(function () {
     function imprimirTresUltimasNoticias() {
         $.getJSON("../DATA/2.json", function (jsonObject) {
             $.each(jsonObject, function (i, news) {
+                console.log(news)
                 $("#newNews").append("<div id=\"noticiaCargada\" class=\"row featurette\" > <div class=\"col-md-7\">" + "<h2 class=\"featurette-heading\">" + news.title +
                     "</h2>" + "<p class=\"lead\">" + news.miniDescripcion + "</p>" +
                     "<button type=button class=\"btn btn-info btn-lg nuevaNoticia \" data-indice=" + news.indice + ">Noticia Completa</button>" + "</div>" +
